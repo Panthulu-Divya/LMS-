@@ -1,6 +1,6 @@
 "use client";
 
-import { UploadDropzone } from "@/lib/uploadthing";
+import { UploadButton, UploadDropzone } from "@/lib/uploadthing";
 import { ourFileRouter } from "@/app/api/uploadthing/core";
 import toast from "react-hot-toast";
 
@@ -14,7 +14,7 @@ export const FileUpload = ({
     endpoint
 }: FileUploadProps) => {
     return (
-        <UploadDropzone 
+        <UploadButton 
             endpoint={endpoint}
             onClientUploadComplete={(res) => {
                 onChange(res?.[0].url);
